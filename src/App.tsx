@@ -1,26 +1,16 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { useContext, FC } from "react";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+import { AppProvider, ThemeContext } from "./Content";
+
+const App: FC<{}> = () => {
+    const st  = useContext(ThemeContext);
+    return (
+        <AppProvider>
+            <div style={{ height: "100vh", width: "100wh", backgroundColor: "black" }} >
+                <h1>Hello World</h1>
+            </div>
+        </AppProvider>
+    );
+};
 
 export default App;
